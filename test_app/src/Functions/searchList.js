@@ -7,18 +7,22 @@ import {
 
 const SearchList = () => {
 
+
+   
     var href = window.location.href;
     var searchcontent_array = href.split('/');
 
     var searchcontent = searchcontent_array[searchcontent_array.length-1];
 
-    const [posts, setPosts] = useState([]);
+    const [names, setNames] = useState([]);
+    const [titles, setTitles] = useState([]);
     useEffect(() => {
        fetch('http://localhost:5001/api/search/'+ searchcontent)
           .then((response) => response.json())
           .then((data) => {
              console.log(data);
-             setPosts(data.items);
+             setNames(data.nameResults.nameResultItems);
+             setTitles(data.titleResults.titleResultItems)
           })
           .catch((err) => {
              console.log(err.message);
@@ -28,14 +32,42 @@ const SearchList = () => {
     return(
         <div>
          
-         {posts.map((post) => {
+         <h2>Titles</h2>
+
+         {titles.map((title) => {
+
+            var array = title.basicTitle.url.split('/');
+            var tconst = array[array.length-1];
+
             return (
-               <NavLink to={"/titles/" + post.basicTitle.tconst}>
-                  <div className="list-item">{post.basicTitle.primaryTitle}</div>
-               </NavLink>
+               <>
+                  <div>
+                     <NavLink to={"/titles/" + tconst}>
+                        <div className="list-item">{title.basicTitle.primaryTitle}</div>
+                     </NavLink>
+                  </div>
+               </>
             );
             })
          }
+
+         <h2>Names</h2>
+
+         {names.map((name) => {
+
+            var array = name.basicName.url.split('/');
+            var nconst = array[array.length-1];
+
+            return(
+               <>
+                  <NavLink to={"/names/" + nconst}>
+                           <div className="list-item">{name.basicName.primaryName}</div>
+                  </NavLink>
+               </>
+            )
+
+         })}
+
       </div>  
     )
 

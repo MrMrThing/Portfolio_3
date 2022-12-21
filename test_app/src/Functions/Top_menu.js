@@ -9,7 +9,7 @@ import {
 const Top_Menu = () => {
 
     const [search_string, setSearch_string] = useState('');
-    const [Category_select, setCategory_select] = useState('names');
+    const [Category_select, setCategory_select] = useState('all');
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
