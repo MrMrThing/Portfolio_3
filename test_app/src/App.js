@@ -22,6 +22,7 @@ import Login from './Functions/Login.js';
 import SearchHistory from './Functions/SearchHistory';
 import GetRelated from './Functions/GetRelated';
 import Rating from './Functions/Rating';
+import MyRatings from './Functions/MyRatings';
 
 
 const App = () => 

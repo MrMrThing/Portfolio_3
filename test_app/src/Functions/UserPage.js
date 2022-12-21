@@ -12,7 +12,7 @@ const UserPage = () => {
                 <NavLink className="top-menu-button" to="nameBookmarks">Name Bookmarks</NavLink> 
                 <NavLink className="top-menu-button">Title Bookmarks</NavLink> 
                 <NavLink className="top-menu-button" to="searchHistory">Search History</NavLink> 
-                <NavLink className="top-menu-button" >My Ratings</NavLink> 
+                <NavLink className="top-menu-button" to="ratings">My Ratings</NavLink> 
             </div>
 
             <Outlet />
