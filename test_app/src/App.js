@@ -21,6 +21,7 @@ import CreateNameBookmarks from './Functions/CreateNameBookmark';
 import Login from './Functions/Login.js';
 import SearchHistory from './Functions/SearchHistory';
 import GetRelated from './Functions/GetRelated';
+import Rating from './Functions/Rating';
 
 
 const App = () => 
@@ -30,6 +31,7 @@ const App = () =>
          <Route path="/"                           element={<Top_Menu />}>
             <Route path="/titles"                  element={<TitlesList />}/>
             <Route path="/titles/:tconst"          element={<TitleDetailed />}>
+               <Route path="/titles/:tconst/rate/:number"  element={<Rating />}/>
                <Route path="/titles/:tconst/crew"  element={<GetTitleCrew />}/>
             </Route>
             <Route path="/login/username/:username/password/:password" element={<Login />}/>
@@ -41,6 +43,7 @@ const App = () =>
             <Route path="/search/titles"           element={<SearchListTitles />}/>
             <Route path="/search/all"              element={<SearchList />}/>
             <Route path="/userPage"                element={<UserPage />}>
+               <Route path="/userPage/ratings"     element={<MyRatings />}/>
                <Route path="/userPage/searchHistory"        element={<SearchHistory />}/>
                <Route path="/userPage/nameBookmarks"        element={<NameBookmarks />}/>
                <Route path="/userPage/nameBookmarks/delete/:nconst" element={<DeleteNameBookmarks />}></Route>

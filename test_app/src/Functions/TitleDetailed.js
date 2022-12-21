@@ -14,6 +14,8 @@ const TitleDetailed = () => {
     var tconst = array[array.length-1];
 
     const [posts, setPosts] = useState([]);
+    const [rate_number, setRate_number] = useState();
+
     useEffect(() => {
        fetch('http://localhost:5001/api/titles/detailed/' + tconst)
           .then((response) => response.json())
@@ -42,6 +44,10 @@ const TitleDetailed = () => {
          <p>Genres: {posts.genres}</p>
          <p>{posts.plot}</p>
        </div>
+
+      <label>Rate Between 1 - 10</label>
+      <input type="text" id="rate-number" onChange={event => setRate_number(event.target.value)}></input>
+      <NavLink className="top-menu-button" to={'/titles/' + tconst + '/rate/' + rate_number}>Rate!</NavLink>
       
       <NavLink classname="top-menu-button" to='crew'>Crew List</NavLink>
 
