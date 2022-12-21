@@ -30,9 +30,9 @@ const TitlesList = () => {
    return(
       <div>
 
-      <NavLink to={LastPage}>Last Page</NavLink>
-      <NavLink to={PrevPage}>Previus Page</NavLink>
-      <NavLink to={NextPage}>Next Page</NavLink>
+      <NavLink className="top-menu-button"to={LastPage}>Last Page</NavLink>
+      <NavLink className="top-menu-button"to={PrevPage}>Previus Page</NavLink>
+      <NavLink className="top-menu-button"to={NextPage}>Next Page</NavLink>
          
          {posts.map((post) => {
             var array = post.basicTitle.url.split('/');

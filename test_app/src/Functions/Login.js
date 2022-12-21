@@ -20,8 +20,7 @@ const Login = () => {
 
      return(
         <>
-
-            <h2>Created Bookmark</h2>        
+   
         </>
      )
 

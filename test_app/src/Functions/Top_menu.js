@@ -14,6 +14,9 @@ const Top_Menu = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
+    const [login_status, setLogin_status] = useState('');
+
+
     return(
         <>
             <div className="top-menu">
@@ -39,6 +42,7 @@ const Top_Menu = () => {
 
             <NavLink className="top-menu-button" to={"/login/username/" + username + "/" + "password/" + password}>Login</NavLink>
             
+
         </div>
 
         <Outlet />

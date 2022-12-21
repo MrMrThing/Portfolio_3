@@ -33,7 +33,7 @@ const App = () =>
                <Route path="/titles/:tconst/crew"  element={<GetTitleCrew />}/>
             </Route>
             <Route path="/login/username/:username/password/:password" element={<Login />}/>
-            <Route path="/names"                   element={<NamesList />}/>
+            <Route path="/names/list"               element={<NamesList />}/>
             <Route path="/names/:nconst"           element={<NameDetailed />}>
                <Route path="/names/:nconst/related" element={<GetRelated />}/>
             </Route>

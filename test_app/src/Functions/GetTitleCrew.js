@@ -31,7 +31,7 @@ const GetTitleCrew = () => {
                 var array = crews.basicName.url.split('/');
                 var nconst = array[array.length-1];
                 return (
-                    <NavLink to={'/names/' + nconst}>
+                    <NavLink to={'/names/list' + nconst}>
                         <div className='list-item'>
                             <h3>{crews.basicName.primaryName}</h3>
                             <p>Character Name: {crews.characterName}</p>
