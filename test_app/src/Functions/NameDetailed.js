@@ -48,7 +48,6 @@ const NameDetailed = () => {
 
       <div>
          <NavLink to={"/userPage/nameBookmarks/create/" + nconst}>Create Bookmark</NavLink>
-
          <NavLink to={"/names/" + nconst + "/related"}>Movies Related to this Actor</NavLink>
       </div>
       <Outlet />
