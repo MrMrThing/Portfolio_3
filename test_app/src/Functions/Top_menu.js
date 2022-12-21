@@ -29,7 +29,7 @@ const Top_Menu = () => {
 
             <NavLink className="top-menu-button" to="/titles">Movies</NavLink>
             <NavLink className="top-menu-button" to="/names">Actors</NavLink>
-            <button className="top-menu-button">USER</button>
+            <NavLink className="top-menu-button" to="/userPage">USER</NavLink>
 
             <label>Username:</label>
             <input type="text" id="username" onChange={event => setUsername(event.target.value)}></input>

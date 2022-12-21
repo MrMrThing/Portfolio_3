@@ -14,7 +14,7 @@ const NameDetailed = () => {
 
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-       fetch('http://localhost:5001/api/names/detailed' + nconst)
+       fetch('http://localhost:5001/api/names/detailed/' + nconst)
           .then((response) => response.json())
           .then((data) => {
              console.log(data);
@@ -46,8 +46,13 @@ const NameDetailed = () => {
          <p>Death: {posts.deathYear}</p>
        </div>
 
-      <NavLink to={"/userPage/nameBookmarks/create/" + nconst}>Create Bookmark</NavLink>
-       </>
+      <div>
+         <NavLink to={"/userPage/nameBookmarks/create/" + nconst}>Create Bookmark</NavLink>
+
+         <NavLink to={"/names/" + nconst + "/related"}>Movies Related to this Actor</NavLink>
+      </div>
+      <Outlet />
+      </>
     )
 
 };

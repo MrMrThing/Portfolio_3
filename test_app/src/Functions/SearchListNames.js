@@ -31,8 +31,10 @@ const SearchListNames = () => {
         <div>
          
          {posts.map((post) => {
+            var array = post.basicName.url.split('/');
+            var nconst = array[array.length-1];
             return (
-               <NavLink to={"/names/" + post.basicName.nconst}>
+               <NavLink to={"/names/" + nconst}>
                   <div className="list-item">{post.basicName.primaryName}</div>
                </NavLink>
             );

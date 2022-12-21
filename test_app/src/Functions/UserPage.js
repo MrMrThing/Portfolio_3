@@ -9,10 +9,10 @@ const UserPage = () => {
     return(
         <>
             <div>
-                <NavLink to="nameBookmarks">Name Bookmarks</NavLink> 
-                <NavLink>Title Bookmars</NavLink> 
-                <NavLink to="searchHistory">Search History</NavLink> 
-                <NavLink>My Ratings</NavLink> 
+                <NavLink className="top-menu-button" to="nameBookmarks">Name Bookmarks</NavLink> 
+                <NavLink className="top-menu-button">Title Bookmarks</NavLink> 
+                <NavLink className="top-menu-button" to="searchHistory">Search History</NavLink> 
+                <NavLink className="top-menu-button" >My Ratings</NavLink> 
             </div>
 
             <Outlet />

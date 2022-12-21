@@ -3,7 +3,6 @@ import '../App.css';
 import { 
     Routes, Route, Link, NavLink, useParams, Outlet
   } from "react-router-dom";
-import DeleteNameBookmarks from './DeleteNameBookmark';
 
 const NameBookmarks = () => {
 
@@ -34,7 +33,7 @@ const NameBookmarks = () => {
                     </div>
                     <Outlet />
                 </NavLink>
-                <NavLink to={"/userPage/nameBookmarks/delete/" + nconst}>Delete Bookmark</NavLink>
+                <NavLink className="top-menu-button" to={"/userPage/nameBookmarks/delete/" + nconst}>Delete Bookmark</NavLink>
             </>
             );
             })

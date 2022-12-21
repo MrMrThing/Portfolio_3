@@ -3,20 +3,20 @@ import { NavLink } from 'react-router-dom';
 import '../App.css';
 
 
-const GetTitleCrew = () => {
+const GetRelated = () => {
 
     var href = window.location.href;
     var array = href.split('/');
 
-    var tconst = array[array.length-2];
+    var nconst = array[array.length-2];
 
-    const [crew, setCrew] =useState([]);
+    const [related, setRelated] =useState([]);
     useEffect(() => {
-        fetch('http://localhost:5001/api/titles/' + tconst + '/crew')
+        fetch('http://localhost:5001/api/names/' + nconst + '/contributing')
           .then((response) => response.json())
           .then((data) => {
              console.log(data);
-             setCrew(data.items);
+             setRelated(data.items);
           })
           .catch((err) => {
              console.log(err.message);
@@ -27,15 +27,13 @@ const GetTitleCrew = () => {
 
         <div>
 
-            {crew.map((crews) => {
-                var array = crews.basicName.url.split('/');
-                var nconst = array[array.length-1];
+            {related.map((movies) => {
+                var array = movies.basicTitle.url.split('/');
+                var tconst = array[array.length-1];
                 return (
-                    <NavLink to={'/names/' + nconst}>
+                    <NavLink to={'/titles/' + tconst}>
                         <div className='list-item'>
-                            <h3>{crews.basicName.primaryName}</h3>
-                            <p>Character Name: {crews.characterName}</p>
-                            <p>Job: {crews.category}</p>
+                            <h3>{movies.basicTitle.primaryTitle}</h3>
                             <p></p>
                         </div>
                     </NavLink>
@@ -48,4 +46,4 @@ const GetTitleCrew = () => {
 
 }
 
-export default GetTitleCrew;
+export default GetRelated;

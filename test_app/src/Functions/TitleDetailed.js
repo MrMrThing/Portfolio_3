@@ -15,7 +15,7 @@ const TitleDetailed = () => {
 
     const [posts, setPosts] = useState([]);
     useEffect(() => {
-       fetch('http://localhost:5001/api/titles/' + tconst)
+       fetch('http://localhost:5001/api/titles/detailed/' + tconst)
           .then((response) => response.json())
           .then((data) => {
              console.log(data);
@@ -35,14 +35,15 @@ const TitleDetailed = () => {
       <>
        <div className='title_detailed'>
          <h3>{posts.primaryTitle}</h3>
-         <p>Rating: {posts.averageRating}</p>
+         <p>Rating: {posts.rating}</p>
          <p>Year: {posts.startYear}</p>
          <p>R Rated? {posts.isAdult}</p>
-         <p>Runtime: {posts.runTimeMinutes}</p>
+         <p>Runtime: {posts.runtime}</p>
          <p>Genres: {posts.genres}</p>
+         <p>{posts.plot}</p>
        </div>
       
-      <NavLink classname="top-menu-button" to={'crew'}>Crew List</NavLink>
+      <NavLink classname="top-menu-button" to='crew'>Crew List</NavLink>
 
       <Outlet />
 

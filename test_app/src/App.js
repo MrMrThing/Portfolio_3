@@ -20,6 +20,7 @@ import DeleteNameBookmarks from './Functions/DeleteNameBookmark';
 import CreateNameBookmarks from './Functions/CreateNameBookmark';
 import Login from './Functions/Login.js';
 import SearchHistory from './Functions/SearchHistory';
+import GetRelated from './Functions/GetRelated';
 
 
 const App = () => 
@@ -33,7 +34,9 @@ const App = () =>
             </Route>
             <Route path="/login/username/:username/password/:password" element={<Login />}/>
             <Route path="/names"                   element={<NamesList />}/>
-            <Route path="/names/:nconst"           element={<NameDetailed />}/>
+            <Route path="/names/:nconst"           element={<NameDetailed />}>
+               <Route path="/names/:nconst/related" element={<GetRelated />}/>
+            </Route>
             <Route path="/search/names"            element={<SearchListNames />}/>
             <Route path="/search/titles"           element={<SearchListTitles />}/>
             <Route path="/search/all"              element={<SearchList />}/>
