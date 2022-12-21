@@ -16,7 +16,6 @@ const Top_Menu = () => {
 
     const [login_status, setLogin_status] = useState('');
 
-
     return(
         <>
             <div className="top-menu">
@@ -31,7 +30,7 @@ const Top_Menu = () => {
             <NavLink className="top-menu-button" to={"/search/" + Category_select + "?searchContent=" + search_string} >Search</NavLink>
 
             <NavLink className="top-menu-button" to="/titles">Movies</NavLink>
-            <NavLink className="top-menu-button" to="/names">Actors</NavLink>
+            <NavLink className="top-menu-button" to="/names/list">Actors</NavLink>
             <NavLink className="top-menu-button" to="/userPage">USER</NavLink>
 
             <label>Username:</label>
