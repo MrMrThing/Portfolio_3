@@ -10,14 +10,16 @@ const SearchList = () => {
 
    
     var href = window.location.href;
-    var searchcontent_array = href.split('/');
+    var searchString_array = href.split('/');
+    var searchcontent_array = href.split('=');
 
+    var searchString = searchString_array[searchString_array.length-1];
     var searchcontent = searchcontent_array[searchcontent_array.length-1];
 
     const [names, setNames] = useState([]);
     const [titles, setTitles] = useState([]);
     useEffect(() => {
-       fetch('http://localhost:5001/api/search/'+ searchcontent)
+       fetch('http://localhost:5001/api/search/'+ searchString)
           .then((response) => response.json())
           .then((data) => {
              console.log(data);
@@ -28,6 +30,21 @@ const SearchList = () => {
              console.log(err.message);
           });
     }, []);
+
+    useEffect(() => {
+      fetch('http://localhost:5001/api/users/user/searches', 
+          {headers : {'Authorization': 'Basic ' + sessionStorage.getItem('user'), 'Content-Type': 'application/json'} ,
+           method : "POST",
+           body : JSON.stringify({"searchContent" : searchcontent})})
+        .then((response) => response.json())
+        .then((data) => {
+           console.log(data);
+        })
+        .catch((err) => {
+           console.log(err.message);
+        });
+      }, []);
+
 
     return(
         <div>

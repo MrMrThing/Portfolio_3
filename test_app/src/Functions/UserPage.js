@@ -11,7 +11,7 @@ const UserPage = () => {
             <div>
                 <NavLink to="nameBookmarks">Name Bookmarks</NavLink> 
                 <NavLink>Title Bookmars</NavLink> 
-                <NavLink>Search History</NavLink> 
+                <NavLink to="searchHistory">Search History</NavLink> 
                 <NavLink>My Ratings</NavLink> 
             </div>
 

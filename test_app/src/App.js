@@ -19,6 +19,7 @@ import NameBookmarks from './Functions/NameBookmarks';
 import DeleteNameBookmarks from './Functions/DeleteNameBookmark';
 import CreateNameBookmarks from './Functions/CreateNameBookmark';
 import Login from './Functions/Login.js';
+import SearchHistory from './Functions/SearchHistory';
 
 
 const App = () => 
@@ -37,10 +38,12 @@ const App = () =>
             <Route path="/search/titles"           element={<SearchListTitles />}/>
             <Route path="/search/all"              element={<SearchList />}/>
             <Route path="/userPage"                element={<UserPage />}>
+               <Route path="/userPage/searchHistory"        element={<SearchHistory />}/>
                <Route path="/userPage/nameBookmarks"        element={<NameBookmarks />}/>
                <Route path="/userPage/nameBookmarks/delete/:nconst" element={<DeleteNameBookmarks />}></Route>
                <Route path="/userPage/nameBookmarks/create/:nconst" element={<CreateNameBookmarks />}></Route>
             </Route>
+
             
          </Route>
 
