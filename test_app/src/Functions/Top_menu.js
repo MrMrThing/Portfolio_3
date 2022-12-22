@@ -41,6 +41,7 @@ const Top_Menu = () => {
 
             <NavLink className="top-menu-button" to={"/login/username/" + username + "/" + "password/" + password}>Login</NavLink>
             
+            <label>:-)</label>
 
         </div>
 
