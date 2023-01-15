@@ -10,7 +10,7 @@ import NamesList from './Functions/NameList.js';
 import NameDetailed from './Functions/NameDetailed.js';
 import TitleDetailed from './Functions/TitleDetailed.js';
 import Top_Menu from './Functions/Top_menu.js';
-import SearchList from './Functions/SearchList';
+import SearchList from './Functions/searchList';
 import SearchListTitles from './Functions/SearchListTitles.js';
 import SearchListNames from './Functions/SearchListNames';
 import GetTitleCrew from './Functions/GetTitleCrew.js';
