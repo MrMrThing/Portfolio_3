@@ -32,7 +32,7 @@ const NamesList = () => {
           .catch((err) => {
              console.log(err.message);
           });
-    }, [LastPage]);
+    }, [LastPage, FirstPage, NextPage, PrevPage]);
 
 
     return(
